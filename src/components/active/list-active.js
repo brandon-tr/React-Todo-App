@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 class ListActive extends Component {
   render() {
     let todo;
-    this.props.todo !== [] ?
-      todo = Object.keys(this.props.todo).map((val,idx) => {
+    todo = this.props.todo !== [] ?
+      Object.keys(this.props.todo).map((val,idx) => {
         return(
           !this.props.todo[val].active ?
             (<tr key={idx}><td className="list"><input type="checkbox" onChange={this.props.action.bind(this, idx)}/>{this.props.todo[val].chore}</td></tr>)
